@@ -1,0 +1,89 @@
+@import "../../responsive.scss";
+nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+     height: 100px;
+     a{
+        transition: all 0.4s ease;
+        @include sm{
+            display: none;
+        }
+        &:hover{
+            scale:1.15;
+        }
+     }
+     .left{
+        flex:3;
+        display: flex;
+        align-items: center;
+
+        .logo{
+            
+            display: flex;
+            align-items: center;
+            margin: 15px;
+            
+            img{
+                width: 165px;
+            }
+
+        }
+     }
+     .right{
+        flex:3;
+        display:flex;
+        align-items: center;
+        justify-content:flex-end;
+        background-color:#fcf5f3 ;
+        height: 100px;
+       @include md{
+        background-color: transparent;
+       }
+        a{
+            padding: 8px 16px;
+            margin:15px
+        }
+        .register{
+            background-color: #fece51;
+        }
+        .menuIcon{
+            display: none;
+            z-index: 999;
+                img{
+                    width: 36px;
+                    height: 36px;
+                    cursor: pointer;
+                }
+                    @include sm{
+                        display: inline;
+                }
+            
+        }
+        .menu{
+            position: absolute;
+            top: 0;
+            right: -50%;
+            background-color:rgb(234, 17, 17);
+            color: white;
+            height: 100vh;
+            width: 50%;
+            transition: all 1s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+
+            &.active{
+                right: 0;
+            }
+            @include sm{
+                a{
+                    display: initial;
+                }
+            }
+        }
+
+     }
+}
