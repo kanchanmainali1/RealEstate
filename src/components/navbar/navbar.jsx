@@ -1,27 +1,30 @@
 import { useState } from "react";
 import "./navbar.scss";
 function Navbar(){
-    const [open,setOpen] = useState(false)
+    const [open, setOpen] = useState(false)
+    
     return(
         <nav>
             <div className="left">
                 <a href="/" className="logo">
-                <img src="/Logo1.png" alt="" />
+                <img src="/homelogo.png" alt="" />
+                <span>HomeHeaven</span>
                 
                 </a>
+                <a href="/">Home</a>
+                <a href="/">About</a>
+                <a href="/"> Contact</a>
                 
                 
             </div>
             <div className="right">
-            <a href="/">Home</a>
-                <a href="/">About</a>
-                <a href="/"> Contact</a>
+                
                 <a href="/"> Sign in</a>
                 <a href="/" className="register"> Sign up
                 </a>
                 <div className="menuIcon">
-                    <img src="/menu-line.png" alt=""
-                     onClick={()=>setOpen((prev) => !prev)} 
+                    <img src="/menu.png" alt=""
+                     onClick={() => setOpen((prev) => !prev)} 
                      />
 
                 </div>
@@ -36,7 +39,7 @@ function Navbar(){
 
             </div>
         </nav>
-    )
+    );
 
 }
 export default Navbar;

@@ -10,39 +10,54 @@ nav{
             display: none;
         }
         &:hover{
-            scale:1.15;
+            scale:1.05;
         }
      }
      .left{
         flex:3;
         display: flex;
         align-items: center;
+        gap: 80px;
 
         .logo{
             
             display: flex;
             align-items: center;
-            margin: 15px;
+            font-weight: bold;
+            font-size: 20px;
+            gap: 20px;
+        
             
             img{
-                width: 165px;
+                width: 28px;
+            }
+            span{
+                @include md{
+                    display: none;
+                }
+                @include sm{
+                    display:initial;
+                }
             }
 
         }
      }
      .right{
-        flex:3;
+        flex:2;
         display:flex;
         align-items: center;
         justify-content:flex-end;
         background-color:#fcf5f3 ;
-        height: 100px;
+        height: 100vh;
+    
+        
+        
        @include md{
         background-color: transparent;
        }
         a{
-            padding: 8px 16px;
-            margin:15px
+            padding: 12px 24px;
+            margin:20px
         }
         .register{
             background-color: #fece51;
@@ -64,8 +79,8 @@ nav{
             position: absolute;
             top: 0;
             right: -50%;
-            background-color:rgb(234, 17, 17);
-            color: white;
+            background-color:black;
+            color: White;
             height: 100vh;
             width: 50%;
             transition: all 1s ease;
