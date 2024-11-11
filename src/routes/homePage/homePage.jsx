@@ -13,6 +13,7 @@ function Homepage()
                 <h1 className='title'>"Your Next Home Is Just A Click Away!"</h1>
                 <p>Home Heaven will help you find <span>Real Estate</span> & get your dream place.</p>
                 <SearchBar/>
+
                 <div className="boxes">
                     <div className="box">
                         <h1>50+</h1>
@@ -33,7 +34,7 @@ function Homepage()
                 <img src="/bg.png" alt="" />
 
             </div>
-
+           
         </div>
     )
 }
