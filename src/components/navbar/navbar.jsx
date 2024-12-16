@@ -1,45 +1,61 @@
 import { useState } from "react";
 import "./navbar.scss";
-function Navbar(){
-    const [open, setOpen] = useState(false)
-    
-    return(
-        <nav>
-            <div className="left">
-                <a href="/" className="logo">
-                <img src="/homelogo.png" alt="" />
-                <span>HomeHeaven</span>
-                
-                </a>
-                <a href="/">Home</a>
-                <a href="/">About</a>
-                <a href="/"> Contact</a>
-                
-                
-            </div>
-            <div className="right">
-                
-                <a href="/"> Sign in</a>
-                <a href="/" className="register"> Sign up
-                </a>
-                <div className="menuIcon">
-                    <img src="/menu.png" alt=""
-                     onClick={() => setOpen((prev) => !prev)} 
-                     />
+import { Link } from "react-router-dom";
 
-                </div>
-                <div className={open ? "menu active" :"menu"}>
-                <a href="/">Home</a>
-                <a href="/">About</a>
-                <a href="/"> Contact</a>
-                <a href="/"> Sign in</a>
-                <a href="/"> Sign up</a>
+function Navbar() {
+  const [open, setOpen] = useState(false);
 
-                </div>
-
-            </div>
-        </nav>
-    );
-
+  const user = true;
+  return (
+    <nav>
+      <div className="left">
+        <a href="/" className="logo">
+          <img src="/homelogo.png" alt="" />
+          <span>HomeHeaven</span>
+        </a>
+        <a href="/">Home</a>
+        <a href="/">About</a>
+        <a href="/">Contact</a>
+        
+      </div>
+      <div className="right">
+        {user ? (
+          <div className="user">
+            <img
+              src="Karan.jpg"
+              alt=""
+            />
+            <span>Karan Mainali</span>
+            <Link to="/profile" className="profile">
+              <div className="notification">3</div>
+              <span>Profile</span>
+            </Link>
+          </div>
+        ) : (
+          <>
+            <a href="/">Sign in</a>
+            <a href="/" className="register">
+              Sign up
+            </a>
+          </>
+        )}
+        <div className="menuIcon">
+          <img
+            src="/menu.png"
+            alt=""
+            onClick={() => setOpen((prev) => !prev)}
+          />
+        </div>
+        <div className={open ? "menu active" : "menu"}>
+          <a href="/">Home</a>
+          <a href="/">About</a>
+          <a href="/">Contact</a>
+          <a href="/">Sign in</a>
+          <a href="/">Sign up</a>
+        </div>
+      </div>
+    </nav>
+  );
 }
+
 export default Navbar;
